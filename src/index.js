@@ -1,17 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import TEST from './TEST/TEST';
+// import TEST from './TEST/TEST';
 // import App from './App';
 // import Sample1 from './sample';
 import reportWebVitals from './reportWebVitals';
+import Exam from './Exam';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     {/* <App />
     <Sample1 /> */}
-    <TEST />
+    {/* <TEST /> */}
+  <Exam name=" Kavin" age="20"/>
+  {/* <Exam name=" Gokul" age="21"/>
+  <Exam name=" siva" age="22"/> */}
   </React.StrictMode>
 );
 
