@@ -14,8 +14,6 @@ root.render(
     <Sample1 /> */}
     {/* <TEST /> */}
   <Exam name=" Kavin" age="20"/>
-  {/* <Exam name=" Gokul" age="21"/>
-  <Exam name=" siva" age="22"/> */}
   </React.StrictMode>
 );
 

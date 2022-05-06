@@ -1,32 +1,59 @@
-import { Component } from "react";
+import {Component} from 'react';
 
-class Exam extends Component {
+class Test extends Component {
+
     constructor(){
         super()
+        this.state = {
+            input1:0,
+            input2: 1,
+            result: 0
+        }
+    }
+
+    onInput1Change(event) {
+        console.log(event.target.value)
+        this.setState({
+            input1: event.target.value
+        })
+    }
+
+    onInput2Change(event) {
+        console.log("input change calld")
+        this.setState({
+            input2: event.target.value
+        })
 
     }
-    onInput1Change(event){
-        console.log(event.target.value)
-        this.setState({
-            Input1:event.target.value
-        })
-    onInput2Change(event) {
-        console.log(event.target.value)
-        this.setState({
-            Input2:event.target.value
+
+    performAdd()
+    {
+        // this.setState({
+        //     result: +this.state.input1 + +this.state.input2
+        // })
+
+        this.setState((prevState) => {
+            console.log(prevState)
+            return ({
+                result: +prevState.input1 + +prevState.input2
+            })
         })
     }
-    render(){
+    render() {
         console.log(this.props);
-        return(
+      //  this.props.name = 'check'// props immutable
+        return (
             <div>
-            (<div>Welcome{this.props.name}{this.props.age}</div>)
-            Input1 <input type="text" value={this.props.input1} onChange={this.onInput1Change.bind}></input>
+                <div>Welcome {this.props.name}</div>
+                Input 1 <input type="text" value={this.state.input1} onChange={this.onInput1Change.bind(this)}></input>
+                <br/>
+                Input 2 <input type="text" value={this.state.input2} onChange={this.onInput2Change.bind(this)}></input>
+              <button onClick={this.performAdd.bind(this)}>Add</button>
             <br/>
-            Input2 <input type="text" value={this.props.input2} onChange={this.onInput2Change.bind}></input>
-                    </div>
+              <b>{this.state.result}</b>
+            </div>
         )
-       
     }
 }
-export default Exam;
+
+export default Test;
