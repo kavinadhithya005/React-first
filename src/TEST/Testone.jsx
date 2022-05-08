@@ -2,14 +2,20 @@ import React from "react";
 
 class Testone extends React.Component
 {
-    render()
-    {
+    state={
+        time : new Date().toLocaleString()
+
+    }
+    changeHandler = () =>{
+        this.setState({time:new Date().toLocaleString()})
+    }
+    render(){
         return(
             <div>
-                <h1>Test One</h1>
-                <h1>hey guys from page one</h1>
+                <button type='Button' onClick={this.changeHandler}>time</button>
+                <div>{this.state.time}
+                </div>
             </div>
-
         )
     }
 }
